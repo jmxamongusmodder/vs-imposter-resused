@@ -2868,7 +2868,6 @@ class PlayState extends MusicBeatState
 				wiggleEffect.waveFrequency = 5;
 				wiggleEffect.waveSpeed = 1;
 				bg.shader = wiggleEffect.shader;
-				gf.alpha = 0;
 
 			case 'airship':
 				GameOverSubstate.characterName = 'bf-running-death';
@@ -3785,6 +3784,9 @@ class PlayState extends MusicBeatState
 
 		gfGroup.add(gf);
 
+		if (curStage == 'tripletrouble')
+			gf.kill();
+
 		if (SONG.player2 == 'black-run')
 		{
 			dadlegs = new Character(0, 0, 'blacklegs');
@@ -3905,7 +3907,7 @@ class PlayState extends MusicBeatState
 		pet.x += pet.positionArray[0];
 		pet.y += pet.positionArray[1];
 		pet.alpha = 0.001;
-		if (SONG.allowPet)
+		if (!SONG.allowPet)
 		{
 			pet.alpha = 1;
 			boyfriendGroup.add(pet);
@@ -4129,7 +4131,6 @@ class PlayState extends MusicBeatState
 		}
 
 		
-
 		healthBarBG = new AttachedSprite('healthBar');
 		healthBarBG.y = FlxG.height * 0.89;
 		healthBarBG.screenCenter(X);
