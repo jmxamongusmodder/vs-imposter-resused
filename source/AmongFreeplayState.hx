@@ -461,6 +461,10 @@ class AmongFreeplayState extends MusicBeatState
 		infoText.x = FlxG.width - infoText.width - 6;
 
 		super.update(elapsed);
+		ClientPrefs.beans = localBeans;
+		ClientPrefs.forceUnlockedSongs = localWeeks;
+		ClientPrefs.saveSettings();
+		ClientPrefs.loadPrefs();
 	}
 
 	function changeSelection(change:Int)
@@ -515,8 +519,8 @@ class AmongFreeplayState extends MusicBeatState
 		if (ClientPrefs.forceUnlockedSongs != null)
 			hasSavedData = true;	
 
-		ClientPrefs.beans = localBeans;
-		ClientPrefs.forceUnlockedSongs = localWeeks;
+		localBeans = ClientPrefs.beans;
+		localWeeks = ClientPrefs.forceUnlockedSongs;
 		// im just like putting this in its own function because
 		// jesus christ man this cant get near the coherent code
 		weeks.push({
