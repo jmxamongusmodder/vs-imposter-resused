@@ -2868,7 +2868,6 @@ class PlayState extends MusicBeatState
 				wiggleEffect.waveFrequency = 5;
 				wiggleEffect.waveSpeed = 1;
 				bg.shader = wiggleEffect.shader;
-				gf.alpha = 0;
 
 			case 'airship':
 				GameOverSubstate.characterName = 'bf-running-death';
@@ -3785,6 +3784,9 @@ class PlayState extends MusicBeatState
 
 		gfGroup.add(gf);
 
+		if (curStage == 'tripletrouble')
+			gf.kill();
+
 		if (SONG.player2 == 'black-run')
 		{
 			dadlegs = new Character(0, 0, 'blacklegs');
@@ -3905,7 +3907,7 @@ class PlayState extends MusicBeatState
 		pet.x += pet.positionArray[0];
 		pet.y += pet.positionArray[1];
 		pet.alpha = 0.001;
-		if (SONG.allowPet)
+		if (!SONG.allowPet)
 		{
 			pet.alpha = 1;
 			boyfriendGroup.add(pet);
@@ -4129,7 +4131,6 @@ class PlayState extends MusicBeatState
 		}
 
 		
-
 		healthBarBG = new AttachedSprite('healthBar');
 		healthBarBG.y = FlxG.height * 0.89;
 		healthBarBG.screenCenter(X);
@@ -4187,6 +4188,12 @@ class PlayState extends MusicBeatState
 		iconP2.visible = !ClientPrefs.hideHud;
 		add(iconP2);
 		reloadHealthBarColors();
+
+		if (iconP2.char == 'top'){
+			iconP2.changeIcon('joke2');
+			iconP1.changeIcon('joke1');
+			SONG.arrowSkin = 'gudnot';
+		}
 
         sussusPenisLOL = new FlxText(0, healthBarBG.y + 62, 0, curSong + " Hard | KE 1.4.2", 20);
 //            sussusPenisLOL.screenCenter(X);
@@ -6359,6 +6366,12 @@ class PlayState extends MusicBeatState
 		else if (PlayState.SONG.stage.toLowerCase() == 'alpha' || defeatDark)
 		{
 				scoreTxt.text = 'Score: $songScore | Combo Breaks: $songMisses | Accuracy: ';
+
+				if (FlxG.keys.justPressed.NINE)
+					if (iconP1.char == 'bf-old')
+						iconP1.changeIcon(boyfriend.healthIcon);
+					else
+						iconP1.changeIcon('bf-old');
 		
 				if (ratingString != '?'){
 					scoreTxt.text += ((Math.floor(ratingPercent * 10000) / 100)) + '% | ';

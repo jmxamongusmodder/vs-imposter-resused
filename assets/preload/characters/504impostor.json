@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				80,
+				-271
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle funni 504",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				237,
+				-274
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "rit rel i maybe idk when me why you me come real sus impoker",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				90,
+				-115
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "downmaybeidldkfdlkjgiojiojhdioujioghggh",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				348,
+				-275
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "lift?????!?!?!?!?!?!?!?!?!?!?!?!??!?!",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				54,
+				-74
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "UIOPODOIE",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/amonguh504",
+	"position": [
+		-290,
+		-130
+	],
+	"healthicon": "placeholder",
+	"flip_x": false,
+	"healthbar_colors": [
+		35,
+		40,
+		45
+	],
+	"camera_position": [
+		-90,
+		170
+	],
+	"sing_duration": 6.1,
+	"scale": 1.1
+}

@@ -96,13 +96,13 @@ class AmongFreeplayState extends MusicBeatState
 	var lockTween:FlxTween;
     var textTween:FlxTween;
 
-	var localBeans:Int;
+	public static var localBeans:Int;
 
 	// someones dying for this
 	// and its me!
 	public static var weeks:Array<FreeplayWeek> = [];
-	var hasSavedData:Bool = false;
-	var localWeeks:Array<FreeplayWeek>;
+	public static var hasSavedData:Bool = false;
+	public static var localWeeks:Array<FreeplayWeek>;
 
 	var listOfButtons:Array<FreeplayCard> = [];
 
@@ -401,9 +401,6 @@ class AmongFreeplayState extends MusicBeatState
 			//
 			if (controls.BACK)
 			{
-				ClientPrefs.beans = localBeans;
-				ClientPrefs.forceUnlockedSongs = localWeeks;
-
 				ClientPrefs.saveSettings();
 
 				FlxG.sound.play(Paths.sound('cancelMenu'));
@@ -452,8 +449,6 @@ class AmongFreeplayState extends MusicBeatState
 				}else{
 					openSubState(new AmongDifficultySubstate(curWeek, listOfButtons[curSelected].songName));
 					FlxG.sound.play(Paths.sound('panelAppear', 'impostor'), 0.5);
-					ClientPrefs.beans = localBeans;
-					ClientPrefs.forceUnlockedSongs = localWeeks;
 
 					ClientPrefs.saveSettings();
 				}
@@ -463,6 +458,16 @@ class AmongFreeplayState extends MusicBeatState
 		infoText.x = FlxG.width - infoText.width - 6;
 
 		super.update(elapsed);
+		if(ClientPrefs.beans > 0 && ClientPrefs.forceUnlockedSongs != null){
+			ClientPrefs.beans = localBeans;
+			ClientPrefs.forceUnlockedSongs = localWeeks;
+			ClientPrefs.saveSettings();
+			ClientPrefs.loadPrefs();
+		}else{
+			ClientPrefs.beans = localBeans;
+			ClientPrefs.forceUnlockedSongs = localWeeks;
+			ClientPrefs.saveSettings();
+		}
 	}
 
 	function changeSelection(change:Int)
@@ -504,9 +509,6 @@ class AmongFreeplayState extends MusicBeatState
 
 	public function goBack()
 	{
-		ClientPrefs.beans = localBeans;
-		ClientPrefs.forceUnlockedSongs = localWeeks;
-
 		ClientPrefs.saveSettings();
 
 		MusicBeatState.switchState(new MainMenuState());
@@ -516,6 +518,12 @@ class AmongFreeplayState extends MusicBeatState
 	public static function addWeeks():Array<FreeplayWeek>
 	{
 		weeks = [];
+
+		if (ClientPrefs.forceUnlockedSongs != null)
+			hasSavedData = true;	
+
+		localBeans = ClientPrefs.beans;
+		localWeeks = ClientPrefs.forceUnlockedSongs;
 		// im just like putting this in its own function because
 		// jesus christ man this cant get near the coherent code
 		weeks.push({
@@ -702,6 +710,15 @@ class AmongFreeplayState extends MusicBeatState
 
 			section: 8
 		});
+
+		weeks.push({
+			songs: [
+				["monochrome", "white", 'white', FlxColor.WHITE, BEANS, [], 1000, false],
+				["Posussium", "oldpostor", 'oldpostor', FlxColor.GREEN, BEANS, [], 500, false]
+			],
+
+			section: 9
+		});
 		return weeks;
 	}
 
@@ -712,13 +729,13 @@ class AmongFreeplayState extends MusicBeatState
 
 		curWeek += change;
 
-		if (curWeek > 8)
+		if (curWeek > 9)
 		{
 			curWeek = 0;
 		}
 		if (curWeek < 0)
 		{
-			curWeek = 8;
+			curWeek = 9;
 		}
 
 		trace(curWeek + ' ' + weeks.length);

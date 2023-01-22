@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="amonguh.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="UIOPODOIE0000" x="0" y="0" width="925" height="1167" frameX="-47" frameY="-43" frameWidth="998" frameHeight="1249"/>
+	<SubTexture name="UIOPODOIE0001" x="925" y="0" width="950" height="1195" frameX="-32" frameY="-29" frameWidth="998" frameHeight="1249"/>
+	<SubTexture name="UIOPODOIE0002" x="1875" y="0" width="998" height="1249"/>
+	<SubTexture name="downmaybeidldkfdlkjgiojiojhdioujioghggh0000" x="2873" y="0" width="901" height="990" frameX="-151" frameY="-116" frameWidth="1211" frameHeight="1194"/>
+	<SubTexture name="downmaybeidldkfdlkjgiojiojhdioujioghggh0001" x="3774" y="0" width="939" height="1021" frameX="-129" frameY="-99" frameWidth="1211" frameHeight="1194"/>
+	<SubTexture name="downmaybeidldkfdlkjgiojiojhdioujioghggh0002" x="4713" y="0" width="1041" height="1067" frameX="-81" frameY="-76" frameWidth="1211" frameHeight="1194"/>
+	<SubTexture name="downmaybeidldkfdlkjgiojiojhdioujioghggh0003" x="5754" y="0" width="1211" height="1194"/>
+	<SubTexture name="idle funni 5040000" x="6965" y="0" width="879" height="899" frameX="-110" frameY="0" frameWidth="1189" frameHeight="899"/>
+	<SubTexture name="idle funni 5040001" x="0" y="1249" width="957" height="899" frameX="-84" frameY="0" frameWidth="1189" frameHeight="899"/>
+	<SubTexture name="idle funni 5040002" x="957" y="1249" width="1011" height="899" frameX="-67" frameY="0" frameWidth="1189" frameHeight="899"/>
+	<SubTexture name="idle funni 5040003" x="1968" y="1249" width="1063" height="899" frameX="-47" frameY="0" frameWidth="1189" frameHeight="899"/>
+	<SubTexture name="idle funni 5040004" x="3031" y="1249" width="1111" height="899" frameX="-29" frameY="0" frameWidth="1189" frameHeight="899"/>
+	<SubTexture name="idle funni 5040005" x="4142" y="1249" width="1189" height="899"/>
+	<SubTexture name="idle funni 5040006" x="5331" y="1249" width="1149" height="899" frameX="-14" frameY="0" frameWidth="1189" frameHeight="899"/>
+	<SubTexture name="idle funni 5040007" x="6480" y="1249" width="1073" height="899" frameX="-42" frameY="0" frameWidth="1189" frameHeight="899"/>
+	<SubTexture name="lift?????!?!?!?!?!?!?!?!?!?!?!?!??!?!0000" x="0" y="2148" width="1069" height="899" frameX="-216" frameY="0" frameWidth="1391" frameHeight="901"/>
+	<SubTexture name="lift?????!?!?!?!?!?!?!?!?!?!?!?!??!?!0001" x="1069" y="2148" width="1115" height="899" frameX="-185" frameY="0" frameWidth="1391" frameHeight="901"/>
+	<SubTexture name="lift?????!?!?!?!?!?!?!?!?!?!?!?!??!?!0002" x="2184" y="2148" width="1221" height="899" frameX="-112" frameY="-2" frameWidth="1391" frameHeight="901"/>
+	<SubTexture name="lift?????!?!?!?!?!?!?!?!?!?!?!?!??!?!0003" x="3405" y="2148" width="1391" height="899" frameX="0" frameY="-2" frameWidth="1391" frameHeight="901"/>
+	<SubTexture name="rit rel i maybe idk when me why you me come real sus impoker0000" x="4796" y="2148" width="1478" height="899" frameX="-49" frameY="0" frameWidth="1617" frameHeight="901"/>
+	<SubTexture name="rit rel i maybe idk when me why you me come real sus impoker0001" x="6274" y="2148" width="1543" height="899" frameX="-21" frameY="0" frameWidth="1617" frameHeight="901"/>
+	<SubTexture name="rit rel i maybe idk when me why you me come real sus impoker0002" x="0" y="3047" width="1617" height="899" frameX="0" frameY="-2" frameWidth="1617" frameHeight="901"/>
+</TextureAtlas>
