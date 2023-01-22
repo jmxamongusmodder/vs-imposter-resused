@@ -4189,6 +4189,12 @@ class PlayState extends MusicBeatState
 		add(iconP2);
 		reloadHealthBarColors();
 
+		if (iconP2.char == 'top'){
+			iconP2.changeIcon('joke2');
+			iconP1.changeIcon('joke1');
+			SONG.arrowSkin = 'gudnot';
+		}
+
         sussusPenisLOL = new FlxText(0, healthBarBG.y + 62, 0, curSong + " Hard | KE 1.4.2", 20);
 //            sussusPenisLOL.screenCenter(X);
         sussusPenisLOL.scrollFactor.set();
@@ -6360,6 +6366,12 @@ class PlayState extends MusicBeatState
 		else if (PlayState.SONG.stage.toLowerCase() == 'alpha' || defeatDark)
 		{
 				scoreTxt.text = 'Score: $songScore | Combo Breaks: $songMisses | Accuracy: ';
+
+				if (FlxG.keys.justPressed.NINE)
+					if (iconP1.char == 'bf-old')
+						iconP1.changeIcon(boyfriend.healthIcon);
+					else
+						iconP1.changeIcon('bf-old');
 		
 				if (ratingString != '?'){
 					scoreTxt.text += ((Math.floor(ratingPercent * 10000) / 100)) + '% | ';

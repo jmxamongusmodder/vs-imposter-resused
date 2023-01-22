@@ -401,9 +401,6 @@ class AmongFreeplayState extends MusicBeatState
 			//
 			if (controls.BACK)
 			{
-				ClientPrefs.beans = localBeans;
-				ClientPrefs.forceUnlockedSongs = localWeeks;
-
 				ClientPrefs.saveSettings();
 
 				FlxG.sound.play(Paths.sound('cancelMenu'));
@@ -461,10 +458,16 @@ class AmongFreeplayState extends MusicBeatState
 		infoText.x = FlxG.width - infoText.width - 6;
 
 		super.update(elapsed);
-		ClientPrefs.beans = localBeans;
-		ClientPrefs.forceUnlockedSongs = localWeeks;
-		ClientPrefs.saveSettings();
-		ClientPrefs.loadPrefs();
+		if(ClientPrefs.beans > 0 && ClientPrefs.forceUnlockedSongs != null){
+			ClientPrefs.beans = localBeans;
+			ClientPrefs.forceUnlockedSongs = localWeeks;
+			ClientPrefs.saveSettings();
+			ClientPrefs.loadPrefs();
+		}else{
+			ClientPrefs.beans = localBeans;
+			ClientPrefs.forceUnlockedSongs = localWeeks;
+			ClientPrefs.saveSettings();
+		}
 	}
 
 	function changeSelection(change:Int)
